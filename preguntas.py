@@ -15,18 +15,20 @@ def pregunta_01():
     """
     Complete el código presentado a continuación.
     """
+    from sklearn.datasets import load_digits
 
     # Cargue el dataset digits
-    digits = ____.____()
+    df = load_digits()
+    digits = pd.DataFrame(np.column_stack([df['data'], df['target']]), columns=df['feature_names'] + ['target'])
 
     # Imprima los nombres de la variable target del dataset
-    print(____.____)
+    print(digits['target'].unique())
 
     # Imprima las dimensinoes de matriz de datos
-    print(____.____.____)
+    print(digits.iloc[:,:-1].shape)
 
     # Imprima las dimensiones del vector de salida
-    print(____.____.____)
+    print(digits.iloc[:,-1:].shape)
 
 
 def pregunta_02():
