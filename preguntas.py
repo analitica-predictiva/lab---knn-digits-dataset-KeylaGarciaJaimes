@@ -18,17 +18,16 @@ def pregunta_01():
     from sklearn.datasets import load_digits
 
     # Cargue el dataset digits
-    df = load_digits()
-    digits = pd.DataFrame(np.column_stack([df['data'], df['target']]), columns=df['feature_names'] + ['target'])
-
+    digits = load_digits()
+     
     # Imprima los nombres de la variable target del dataset
-    print(digits['target'].unique())
+    print(np.unique(np.array(digits['target'])))
 
     # Imprima las dimensinoes de matriz de datos
-    print(digits.iloc[:,:-1].shape)
+    print(np.array(digits['data']).shape)
 
     # Imprima las dimensiones del vector de salida
-    print(digits.iloc[:,-1:].shape)
+    print(np.array(digits['target']).shape)
 
 
 def pregunta_02():
